@@ -1,0 +1,12 @@
+{
+  "name": "gui-structure-example",
+  "version": "1.0.0",
+  "description": "Example of a GUI project that showcases good set of tools and structure",
+  "author": "Thomas Bouron",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "modernizr": "~3.3.0",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "fontawesome#~4.5.0"
+  }
+}

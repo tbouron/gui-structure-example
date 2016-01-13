@@ -1,0 +1,6 @@
+.idea
+
+# Folders
+node_modules
+assets/vendors
+dist
