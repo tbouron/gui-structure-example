@@ -217,7 +217,7 @@ module.exports = function(grunt) {
         'autoprefixer:dist',
         'uglify:dist',
         'modernizr',
-        'copy',
+        'copy'
     ]);
     grunt.registerTask('bump', [
         'replace'
