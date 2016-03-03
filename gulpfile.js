@@ -141,7 +141,7 @@ gulp.task('watch', function() {
     gulp.watch(srcRoot + 'less/*', ['less']);
     gulp.watch(srcRoot + 'img/*', ['img']);
     gulp.watch(srcRoot + 'partial/*', ['partial']);
-    gulp.watch(srcRoot + 'index/*', ['index']);
+    gulp.watch(srcRoot + 'index.html', ['index']);
 });
 
 // Start a local webserver
