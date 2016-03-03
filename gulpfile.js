@@ -36,7 +36,7 @@ var minimist = require('minimist');
 var gutil = require('gulp-util');
 
 // Source folder
-var srcRoot = 'assets/';
+var srcRoot = 'src/main/app/';
 // Bower source folder
 var bowerRoot = 'bower_components/';
 // Target folder
@@ -67,7 +67,7 @@ var banner = [
 ].join('\n');
 
 // Modify this list to include or exclude JS you want
-var jsFileList = [
+var jsFilesList = [
     bowerRoot + 'bootstrap/js/*.js',
     srcRoot + 'js/*.js'
 ];
@@ -87,7 +87,7 @@ gulp.task('lint', function() {
 
 // Compile all require javascript files and copy it to the target folder
 gulp.task('js', ['lint'], function() {
-    return gulp.src(jsFileList)
+    return gulp.src(jsFilesList)
         .pipe(concat('public.js'))
         .pipe(gulpif(isProduction, uglify()))
         .pipe(gulpif(isProduction, header(banner)))
@@ -105,7 +105,7 @@ gulp.task('less', ['font'], function() {
         }))
         .pipe(gulpif(isProduction, minifyCss({keepSpecialComments: 0})))
         .pipe(gulpif(isProduction, header(banner)))
-        .pipe(gulpif(!isProduction, sourcemaps.write()))
+        .pipe(gulpif(!isProduction, sourcemaps.write('./')))
         .pipe(gulpif(isProduction, rename({ extname: '.min.css' })))
         .pipe(gulp.dest(targetRoot + 'css'));
 });
